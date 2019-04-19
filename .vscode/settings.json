@@ -1,0 +1,20 @@
+{
+  "editor.formatOnSave": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "dist/": true
+  },
+  "scss.scannerExclude": [
+    "**/.git",
+    "**/node_modules",
+    "dist/"
+  ],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "dist/": true
+  }
+}

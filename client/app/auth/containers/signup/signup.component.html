@@ -1,0 +1,19 @@
+<section class="auth-wrapper d-flex no-block justify-content-center align-items-center">
+  <div class="auth-box">
+    <div class="logo text-center mb-4">
+      <span class="db"><img src="assets/images/logo.png" alt="logo" height="80"/></span>
+      <h5 class="font-medium">Sign Up</h5>
+    </div>
+
+    <!-- Form -->
+    <div class="row">
+      <div class="col-12">
+        <app-signup-form (ngSubmit)="onSubmit($event)" [disabled]="submitting">
+          <div class="form-group errors" *ngIf="error">
+            <ngb-alert type="danger" [dismissible]="false"> {{ error }} </ngb-alert>
+          </div>
+        </app-signup-form>
+      </div>
+    </div>
+  </div>
+</section>

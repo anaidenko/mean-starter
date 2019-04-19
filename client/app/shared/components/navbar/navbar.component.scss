@@ -1,0 +1,15 @@
+@import 'variables';
+
+.navbar {
+  min-height: $navbar-height;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+}

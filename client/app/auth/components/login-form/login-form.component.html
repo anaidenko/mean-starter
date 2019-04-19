@@ -1,0 +1,42 @@
+<form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <div class="form-group row">
+    <div class="col-12">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Email"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': formValidated && email.invalid }"
+        autofocus
+      />
+      <div class="invalid-feedback" *ngIf="formValidated && email.hasError('validateEmail')">
+        Wrong email address.
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-12">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': formValidated && password.invalid }"
+      />
+    </div>
+  </div>
+  <div class="form-group text-center mt-3">
+    <div class="col-xs-12 pb-2">
+      <button class="btn btn-block btn-lg" type="submit" style="background-color: #516e82; color: white">Log In</button>
+    </div>
+  </div>
+  <ng-content select=".form-group.errors"> </ng-content>
+  <div class="form-group mb-1 mt-1">
+    <div class="col-sm-12 text-center">
+      Don't have an account? <a [routerLink]="['/signup']" class="m-l-5"><b>Sign Up</b></a>
+    </div>
+    <div class="col-sm-12 text-center mt-3">
+      <a class="text-muted text-underline" href="#"><i class="fa fa-lock mr-1"></i> Forgot password?</a>
+    </div>
+  </div>
+</form>

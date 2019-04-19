@@ -1,0 +1,13 @@
+<nav class="d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item" *ngFor="let route of menu">
+        <a class="nav-link" [routerLink]="route.path" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: route.exactMatch }">
+          <i class="mr-1" [ngClass]="route.icon" *ngIf="route.icon"></i>
+          {{ route.title }}
+          <span class="sr-only" *ngIf="isActiveLink(route.path)">(current)</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../dist",
+    "module": "commonjs",
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "./typings"
+    ]
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

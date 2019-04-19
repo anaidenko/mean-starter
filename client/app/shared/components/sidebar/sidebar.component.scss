@@ -1,0 +1,5 @@
+@import 'variables';
+
+.sidebar {
+  min-height: calc(100vh - #{$navbar-height});
+}

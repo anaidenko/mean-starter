@@ -1,0 +1,95 @@
+<form class="form-horizontal m-t-20" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <div class="form-group row">
+    <div class="col-6">
+      <input
+        type="text"
+        placeholder="First Name"
+        class="form-control"
+        formControlName="firstname"
+        [ngClass]="{ 'is-invalid': formValidated && firstname.invalid }"
+        autofocus
+      />
+      <div class="invalid-feedback" *ngIf="firstname.invalid">Enter a First Name.</div>
+    </div>
+    <div class="col-6">
+      <input
+        type="text"
+        placeholder="Last Name"
+        class="form-control"
+        formControlName="lastname"
+        [ngClass]="{ 'is-invalid': formValidated && lastname.invalid }"
+      />
+      <div class="invalid-feedback" *ngIf="lastname.invalid">Enter a Last Name.</div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-12 ">
+      <input
+        type="text"
+        placeholder="Email Address"
+        class="form-control"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': formValidated && email.invalid }"
+      />
+      <span class="form-bar"></span>
+      <div class="invalid-feedback" *ngIf="email.invalid">Enter a valid email address.</div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-12 ">
+      <input
+        type="password"
+        placeholder="Password"
+        class="form-control"
+        formControlName="password"
+        [ngClass]="{ 'is-invalid': formValidated && password.invalid }"
+      />
+      <div class="invalid-feedback" *ngIf="password.invalid">Enter a password.</div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-12 ">
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        class="form-control"
+        formControlName="confirmPassword"
+        [ngClass]="{ 'is-invalid': formValidated && confirmPassword.invalid }"
+      />
+      <div class="invalid-feedback" *ngIf="confirmPassword.hasError('required')">Confirm Password.</div>
+      <div class="invalid-feedback" *ngIf="confirmPassword.hasError('validateEqual')">Passwords do not match.</div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-12 ">
+      <div class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="customCheck1"
+          formControlName="confirmTerms"
+          [ngClass]="{ 'is-invalid': formValidated && confirmTerms.invalid }"
+        />
+        <label class="custom-control-label" for="customCheck1">I agree to the <a href="#" target="_blank">terms of use</a>.</label>
+        <div class="invalid-feedback" *ngIf="confirmTerms.hasError('required')">Please confirm the terms of use.</div>
+      </div>
+    </div>
+  </div>
+  <ng-content select=".form-group.errors"> </ng-content>
+  <div class="form-group text-center ">
+    <div class="col-xs-12 p-b-20 ">
+      <button class="btn btn-block btn-lg" type="submit" style="background-color: #516e82; color: white" [disabled]="disabled">
+        Sign Up
+      </button>
+    </div>
+  </div>
+  <div class="form-group m-b-0 m-t-10 ">
+    <div class="col-sm-12 text-center ">
+      Already have an account? <a [routerLink]="['/login']" class="m-l-5"><b>Sign In</b></a>
+    </div>
+  </div>
+</form>
